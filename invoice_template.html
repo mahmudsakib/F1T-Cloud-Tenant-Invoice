@@ -310,15 +310,15 @@
         <table class="header-table" cellpadding="0" cellspacing="0">
             <tr>
                 <td class="logo-cell">
-                    <img src="F1T Cloud Logo.jpg" alt="Logo" width="150">
+                    <img src="{{ tenant.logo }}" alt="Logo" width="150">
                 </td>
                 <td class="title-cell">
                     <div class="arabic-title">فاتورة</div>
                     <div style="font-size: 18px; font-weight: bold; text-decoration: underline;">Invoice</div>
                 </td>
                 <td class="company-cell">
-                    <div>{{ f1t.address_line_1 }}</div>
-                    <!-- <div>{{ branch.address_second_line }}</div> -->
+                    <div>{{ branch.address_line_1 }}</div>
+                    <div>{{ branch.address_second_line }}</div>
                     <!-- <div><strong>Operating Hours:</strong></div>
                     <div>{{ branch.operating_hours }}</div> -->
                 </td>
@@ -327,39 +327,35 @@
 
         <!-- Information Section -->
         <table class="info-table" cellpadding="0" cellspacing="0">
-        <tr>
-        <td class="info-label">Gym Name</td>
-        <td class="info-value">: {{ tenant_name }}</td>
-        <td class="info-arabic">اسم النادي</td>
-
-        <td class="info-label">Invoice No</td>
-        <td class="info-value">: INV-{{ invoice_id }}</td>
-        <td class="info-arabic">رقم الفاتورة</td>
-        </tr>
-
-        <tr>
-        <td class="info-label">From Date</td>
-        <td class="info-value">: {{ start_date }}</td>
-        <td class="info-arabic">من تاريخ</td>
-
-        <td class="info-label">Invoice Date</td>
-        <td class="info-value">: {{ created_at }}</td>
-        <td class="info-arabic">تاريخ الفاتورة</td>
-        </tr>
-        <tr>
-    <td class="info-label">To Date</td>
-    <td class="info-value">: {{ end_date }}</td>
-    <td class="info-arabic">إلى تاريخ</td>
-
-    <td class="info-label">Prepared By</td>
-    <td class="info-value">: {{ staff.name }}</td>
-    <td class="info-arabic">أُعدت بواسطة</td>
-</tr>
-            <!-- <tr>
+            <tr>
+                <td class="info-label">Membership#</td>
+                <td class="info-value">: {{ member.guid }}</td>
+                <td class="info-arabic">رقم العضوية</td>
+                <td class="info-label">Invoice No</td>
+                <td class="info-value">: INV-{{ transaction.invoice_id }}</td>
+                <td class="info-arabic">رقم الفاتورة</td>
+            </tr>
+            <tr>
+                <td class="info-label">Member Name</td>
+                <td class="info-value">: {{ member.name }}</td>
+                <td class="info-arabic">اسم العضو</td>
+                <td class="info-label">Invoice Date</td>
+                <td class="info-value">: {{ transaction.created_at }}</td>
+                <td class="info-arabic">تاريخ الفاتورة</td>
+            </tr>
+            <tr>
+                <td class="info-label">Gym Name</td>
+                <td class="info-value">: {{ tenant.name }}</td>
+                <td class="info-arabic">اسم الشركة</td>
+                <td class="info-label">Prepared By</td>
+                <td class="info-value">: {{ staff.name }}</td>
+                <td class="info-arabic">اعدت بواسطة</td>
+            </tr>
+            <tr>
                 <td class="info-label">Subs Type</td>
                 <td class="info-value">: {{ transaction.product_type }}</td>
                 <td class="info-arabic">نوع الاشتراك</td>
-            </tr> -->
+            </tr>
         </table>
 
         <!-- Items Table -->
@@ -381,7 +377,7 @@
                 </th>
                 <!-- <th>Total Payable</th> -->
             </tr>
-        
+            {% for item in transaction.items %}
             <tr>
                 <td>{{ item.name }}</td>
                 <td>{{ item.quantity }}</td>
@@ -406,7 +402,8 @@
             <!-- <td>{{ item.fees }}</td> -->
             <td>100</td>
             <td>10000</td>
-            </tr>
+            </tr> -->
+            {% endfor %}
         </table>
 
         <!-- Summary Section -->
