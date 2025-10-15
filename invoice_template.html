@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-css/1.0.0/plus-jakarta-sans.min.css" rel="stylesheet">
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">    <style>
         /* Base styles that are email-safe */
         body,
         table,
@@ -17,7 +16,7 @@
         blockquote {
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
-            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Tahoma', 'Arial', 'Amiri', sans-serif;
         }
 
         body {
@@ -71,11 +70,11 @@
 
         .info-table {
             width: 100%;
-            margin-bottom: 20px;
-            background-color: #F2F2F2;
+  border-collapse: collapse;
+  margin-top: 10px;
+            background-color: #f3efef;
         }
-
-        .info-label {
+ .info-label {
             width: 150px;
             padding: 8px;
             text-align: left;
@@ -88,77 +87,92 @@
         }
 
         .info-arabic {
-            width: 120px;
-            padding: 5px;
-            text-align: right;
-            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-        }
+  width: 15%;
+  text-align: right;
+  direction: rtl;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  white-space: nowrap;
+}
 
         .item-table {
             width: 100%;
             margin-bottom: 20px;
-            border: 1px solid #4B4B4B;
+            border: 2px solid #000000;
         }
 
         .item-table th {
-            background-color: #4B4B4B;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
             padding: 8px;
             text-align: center;
-            border: 1px solid #4B4B4B;
+            border: 2px solid #000000;
         }
 
         .item-table td {
             padding: 8px;
             text-align: center;
-            border: 1px solid #4B4B4B;
+            border: 2px solid #000000;
         }
 
         .summary-table {
-            width: 50%;
-            margin-left: auto;
-            margin-bottom: 20px;
-        }
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f3efef;
+}
 
-        .summary-label {
-            text-align: left;
-        }
+.summary-label,
+.summary-value,
+.summary-arabic {
+  padding: 6px 8px;
+}
 
-        .summary-value {
-            text-align: right;
-        }
+.summary-label {
+  text-align: left;
+  width: 35%;
+}
 
-        .summary-arabic {
-            text-align: right;
-            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-            width: 150px;
-            font-weight: bold;
-        }
+.summary-value {
+  text-align: right;
+  width: 25%;
+}
 
-        .total-row td {
-            border-top: 1px solid #4B4B4B;
-            font-weight: bold;
-            padding-top: 5px;
-        }
+.summary-arabic {
+  text-align: right;
+  direction: rtl;
+  width: 30%;
+}
 
-        .payment-table {
+.total-row td {
+  font-weight: bold;
+  border-top: 2px solid #000;
+  padding-top: 8px;
+}
+@media screen and (max-width: 600px) {
+  .summary-label, .summary-value, .summary-arabic {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.payment-table {
             width: 100%;
             margin-bottom: 20px;
-            border: 1px solid #4B4B4B;
+            border: 1px solid #ffffff;
         }
 
         .payment-table th {
-            background-color: #4B4B4B;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
             padding: 8px;
             text-align: center;
-            border: 1px solid #4B4B4B;
+            border: 2px solid #000000;
         }
 
         .payment-table td {
             padding: 8px;
             text-align: center;
-            border: 1px solid #4B4B4B;
+            border: 2px solid #000000;
         }
 
         .company-details {
@@ -169,7 +183,7 @@
         .terms-table {
             width: 100%;
             margin-top: 20px;
-            border-top: 1px solid #4B4B4B;
+            border-top: 2px solid #4B4B4B;
             padding-top: 20px;
         }
 
@@ -233,40 +247,7 @@
                 text-align: center;
             }
 
-            .info-table {
-                display: block;
-                width: 100%;
-            }
-
-            .info-table tr {
-                display: flex;
-                flex-wrap: wrap;
-                margin-bottom: 10px;
-            }
-
-            .info-table td {
-                display: block;
-                box-sizing: border-box;
-            }
-
-            /* Create vertical pairs of English + Arabic */
-            .info-label {
-                width: 40%;
-                padding: 5px;
-            }
-
-            .info-value {
-                width: 60%;
-                padding: 5px;
-            }
-
-            .info-arabic {
-                width: 100%;
-                text-align: right;
-                padding: 0 5px 10px 5px;
-                border-bottom: 1px dashed #ccc;
-                margin-bottom: 10px;
-            }
+            
 
             .item-table {
                 display: block;
@@ -275,6 +256,7 @@
 
             .summary-table {
                 width: 100%;
+            
             }
 
             .payment-table {
@@ -282,6 +264,95 @@
                 overflow-x: auto;
             }
         }
+        .header-table td {
+  vertical-align: middle;
+}
+
+        .company-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.company-details td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.company-label {
+  width: 25%;
+  font-weight: bold;
+  text-align: left;
+}
+
+.company-value {
+  width: 45%;
+  text-align: left;
+}
+
+.company-arabic {
+  width: 30%;
+  text-align: right;
+  direction: rtl;
+  font-style: italic;
+}
+
+/* Responsive tweak for small screens */
+@media screen and (max-width: 480px) {
+  .company-details td {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+  .company-arabic {
+    font-style: normal;
+    margin-top: 4px;
+  }
+}
+
+        .company-cell {
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+        .title-cell {
+  text-align: center;
+}
+
+.arabic-title {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  direction: rtl;
+  text-decoration: underline;
+  margin-bottom: 4px;
+}
+
+        .logo-cell img {
+  max-width: 150px;
+  height: auto;
+}
+
+.header-table {
+  border-bottom: none;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .header-table {
+    width: 100%;
+  }
+  .header-table td {
+    display: block;
+    text-align: center;
+  }
+}
+
 
         @media screen and (max-width: 480px) {
 
@@ -306,166 +377,197 @@
 
 <body>
     <div class="invoice-container">
-        <!-- Header Section -->
-        <table class="header-table" cellpadding="0" cellspacing="0">
-            <tr>
-                <td class="logo-cell">
-                    <img src="{{ tenant.logo }}" alt="Logo" width="150">
-                </td>
-                <td class="title-cell">
-                    <div class="arabic-title">فاتورة</div>
-                    <div style="font-size: 18px; font-weight: bold; text-decoration: underline;">Invoice</div>
-                </td>
-                <td class="company-cell">
-                    <div>{{ branch.address_line_1 }}</div>
-                    <div>{{ branch.address_second_line }}</div>
-                    <!-- <div><strong>Operating Hours:</strong></div>
-                    <div>{{ branch.operating_hours }}</div> -->
-                </td>
-            </tr>
-        </table>
+       <!-- Header Section -->
+<table class="header-table" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+    <td class="logo-cell" style="width:150px; vertical-align:middle;">
+      <img src="{{ tenant.logo }}" alt="Logo" style="max-width:150px; height:auto;">
+    </td>
+
+    <td class="title-cell" style="text-align:center; vertical-align:middle;">
+      <div class="arabic-title">فاتورة</div>
+      <div style="font-size:18px; font-weight:bold; text-decoration:underline;">Invoice</div>
+    </td>
+
+    <td class="company-cell" style="text-align:right; vertical-align:middle; font-size:12px; line-height:1.5;">
+      <div>{{ branch.address_line_1 }}</div>
+      <div>{{ branch.address_second_line }}</div>
+      <!-- Uncomment if needed -->
+      <!-- <div><strong>Operating Hours:</strong></div> -->
+      <!-- <div>{{ branch.operating_hours }}</div> -->
+    </td>
+  </tr>
+</table>
+
+
 
         <!-- Information Section -->
-        <table class="info-table" cellpadding="0" cellspacing="0">
-            <tr>
-                <td class="info-label">Membership#</td>
-                <td class="info-value">: {{ member.guid }}</td>
-                <td class="info-arabic">رقم العضوية</td>
-                <td class="info-label">Invoice No</td>
-                <td class="info-value">: INV-{{ transaction.invoice_id }}</td>
-                <td class="info-arabic">رقم الفاتورة</td>
-            </tr>
-            <tr>
-                <td class="info-label">Member Name</td>
-                <td class="info-value">: {{ member.name }}</td>
-                <td class="info-arabic">اسم العضو</td>
-                <td class="info-label">Invoice Date</td>
-                <td class="info-value">: {{ transaction.created_at }}</td>
-                <td class="info-arabic">تاريخ الفاتورة</td>
-            </tr>
-            <tr>
-                <td class="info-label">Gym Name</td>
-                <td class="info-value">: {{ tenant.name }}</td>
-                <td class="info-arabic">اسم الشركة</td>
-                <td class="info-label">Prepared By</td>
-                <td class="info-value">: {{ staff.name }}</td>
-                <td class="info-arabic">اعدت بواسطة</td>
-            </tr>
-            <tr>
-                <td class="info-label">Subs Type</td>
-                <td class="info-value">: {{ transaction.product_type }}</td>
-                <td class="info-arabic">نوع الاشتراك</td>
-            </tr>
-        </table>
+<table class="info-table" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse;">
+  <tr>
+    <td class="info-label">Membership No</td>
+    <td class="info-value">: {{ member.guid }}</td>
+    <td class="info-arabic">رقم العضوية</td>
 
-        <!-- Items Table -->
-        <table class="item-table" cellpadding="0" cellspacing="0">
-            <tr>
-                <th>Item Description<br><span style="font-family: 'Plus Jakarta Sans', Arial;">وصف البند</span></th>
-                <th>Quantity<br><span style="font-family: 'Plus Jakarta Sans', Arial;">كمية</span></th>
-                <th>Unit Price<br><span style="font-family: 'Plus Jakarta Sans', Arial;">سعر الوحدة</span></th>
-                <th>Total Amount<br><span style="font-family: 'Plus Jakarta Sans', Arial;">المبلغ الإجمالي</span></th>
-                <!-- <th>Discount<br><span style="font-family: 'Plus Jakarta Sans', Arial;">تخفيض</span></th> -->
-                <th>Discount<br><span style="font-family: 'Plus Jakarta Sans', Arial;">قيمة الخصم</span></th>
-                <!-- <th>Tax<br><span style="font-family: 'Plus Jakarta Sans', Arial;">٪ ضريبة القيمة المضافة</span></th> -->
-                <th>Tax<br><span style="font-family: 'Plus Jakarta Sans', Arial;">مبلغ ضريبة القيمة
-                        المضافة</span></th>
-                <!-- <th>Fees(%)<br><span style="font-family: 'Plus Jakarta Sans', Arial;">٪ ضريبة القيمة المضافة</span></th> -->
-                <th>Fees<br><span style="font-family: 'Plus Jakarta Sans', Arial;">مبلغ ضريبة القيمة
-                        المضافة</span></th>
-                <th>Total Payable<br><span style="font-family: 'Plus Jakarta Sans', Arial;">إجمالي المبلغ المستحق</span>
-                </th>
-                <!-- <th>Total Payable</th> -->
-            </tr>
-            {% for item in transaction.items %}
-            <tr>
-                <td>{{ item.name }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.unit_price }}</td>
-                <td>{{ item.total_price }}</td>
+    <td class="info-label">Invoice No</td>
+    <td class="info-value">: INV-{{ invoice_id }}</td>
+    <td class="info-arabic">رقم الفاتورة</td>
+  </tr>
 
-                <td>{{ item.discount_amount }}</td>
-                <td>{{ item.tax_amount }}</td>
-                <td>{{ item.fees_amount }}</td>
-                <td>{{ item.payable_price }}</td>
-            </tr>
-            <!-- <tr>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
+  <tr>
+    <td class="info-label">Member Name</td>
+    <td class="info-value">: {{ member.name }}</td>
+    <td class="info-arabic">اسم العضو</td>
 
-                <!-- <td>100</td> -->
-            <td>100</td>
-            <!-- <td>{{ item.tax }}</td> -->
-            <td>100</td>
-            <!-- <td>{{ item.fees }}</td> -->
-            <td>100</td>
-            <td>10000</td>
-            </tr> -->
-            {% endfor %}
-        </table>
+    <td class="info-label">Invoice Date</td>
+    <td class="info-value">: {{ created_at }}</td>
+    <td class="info-arabic">تاريخ الفاتورة</td>
+  </tr>
+
+  <tr>
+    <td class="info-label">Gym Name</td>
+    <td class="info-value">: {{ tenant.name }}</td>
+    <td class="info-arabic">اسم النادي</td>
+
+    <td class="info-label">Prepared By</td>
+    <td class="info-value">: {{ staff.name }}</td>
+    <td class="info-arabic">أُعد بواسطة</td>
+  </tr>
+
+  <tr>
+    <td class="info-label">Subscription Type</td>
+    <td class="info-value">: {{ product_type }}</td>
+    <td class="info-arabic">نوع الاشتراك</td>
+  </tr>
+</table>
+<br>
+
+<!-- Items Table -->
+<table class="item-table" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse;">
+  <tr>
+    <th>Item(s)<br><span style="font-family:'Plus Jakarta Sans', Arial;">وصف البند</span></th>
+    <th>Quantity<br><span style="font-family:'Plus Jakarta Sans', Arial;">الكمية</span></th>
+    <th>Unit Price<br><span style="font-family:'Plus Jakarta Sans', Arial;">سعر الوحدة</span></th>
+    <!-- <th>Total Amount<br><span style="font-family:'Plus Jakarta Sans', Arial;">المبلغ الإجمالي</span></th> -->
+    <th>Discount<br><span style="font-family:'Plus Jakarta Sans', Arial;">قيمة الخصم</span></th>
+    <th>Tax<br><span style="font-family:'Plus Jakarta Sans', Arial;">مبلغ الضريبة</span></th>
+    <th>Fees<br><span style="font-family:'Plus Jakarta Sans', Arial;">الرسوم</span></th>
+    <th>Total Payable<br><span style="font-family:'Plus Jakarta Sans', Arial;">إجمالي المبلغ المستحق</span></th>
+  </tr>
+
+  <tr>
+    <td>{{ item.(one) }}</td>
+    <td>{{ quantity }}</td>
+    <!-- <td>{{ item.unit_price }}</td> -->
+    <td>{{ price }}</td>
+    <td>{{ disc_amount }}</td>
+    <td>{{ tax_amount }}</td>
+    <td>{{ fees_amount }}</td>
+    <td>{{ payable_price }}</td>
+  </tr>
+
+  <tr>
+    <td>{{ item.(two) }}</td>
+    <td>{{ quantity }}</td>
+    <!-- <td>{{ item.unit_price }}</td> -->
+    <td>{{ price }}</td>
+    <td>{{ disc_amount }}</td>
+    <td>{{ tax_amount }}</td>
+    <td>{{ fees_amount }}</td>
+    <td>{{ payable_price }}</td>
+  </tr>
+</table>
+
 
         <!-- Summary Section -->
-        <table class="summary-table" cellpadding="0" cellspacing="0">
-            <tr>
-                <td class="summary-label"><span class="label-text">SubTotal</span>:</td>
-                <td class="summary-value">{{ transaction.price }}</td>
-            </tr>
-            <tr>
-                <td class="summary-label"><span class="label-text">Discount</span>:</td>
-                <td class="summary-value">{{ transaction.discount }}</td>
-            </tr>
-            <tr>
-                <td class="summary-label"><span class="label-text">Tax</span>:</td>
-                <td class="summary-value">{{ transaction.tax }}</td>
-            </tr>
-            <tr>
-                <td class="summary-label"><span class="label-text">Fees</span>:</td>
-                <td class="summary-value">{{ transaction.fees }}</td>
-            </tr>
-            <tr>
-                <td class="summary-label"><span class="label-text">Coupon Discount</span>:</td>
-                <td class="summary-value">{{ transaction.coupon_discount }}</td>
-            </tr>
-            <tr class="total-row">
-                <td class="summary-label"><span class="label-text">Total Payable</span>:</td>
-                <td class="summary-value">{{ transaction.payable_amount }}</td>
-                <td class="summary-arabic"></td>
-            </tr>
-        </table>
+<table class="summary-table" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="summary-label"><span class="label-text">Total Amount</span>:</td>
+    <td class="summary-value">{{ total_amount }}</td>
+    <td class="summary-arabic">إجمالي المبلغ</td>
+  </tr>
+
+  <tr>
+    <td class="summary-label"><span class="label-text">Total Discount</span>:</td>
+    <td class="summary-value">{{ total_discount }}</td>
+    <td class="summary-arabic">إجمالي الخصم</td>
+  </tr>
+
+  <tr>
+    <td class="summary-label"><span class="label-text">Total Tax</span>:</td>
+    <td class="summary-value">{{ total_tax }}</td>
+    <td class="summary-arabic">إجمالي الضريبة</td>
+  </tr>
+
+  <tr>
+    <td class="summary-label"><span class="label-text">Total Fees</span>:</td>
+    <td class="summary-value">{{ total_fees }}</td>
+    <td class="summary-arabic">إجمالي الرسوم</td>
+  </tr>
+
+<tr>
+  <td class="summary-label"><span class="label-text">Coupon</span>:</td>
+  <td class="summary-value">{{ coupon }}</td>
+  <td class="summary-arabic">القسيمة</td>
+</tr>
+
+
+  <tr class="total-row">
+    <td class="summary-label"><span class="label-text">Total Payable</span>:</td>
+    <td class="summary-value">{{ total_payable }}</td>
+    <td class="summary-arabic">إجمالي المبلغ المستحق</td>
+  </tr>
+</table>
+<br>
+
 
         <!-- Payment Table -->
-        <table class="payment-table" cellpadding="0" cellspacing="0">
-            <tr>
-                <th>Payment Date<br><span style="font-family: 'Plus Jakarta Sans', Arial;">تاريخ الدفع</span></th>
-                <th>Mode Of Payment<br><span style="font-family: 'Plus Jakarta Sans', Arial;">طريقة الدفع</span></th>
-                <th>Amount<br><span style="font-family: 'Plus Jakarta Sans', Arial;">كمية</span></th>
-                <th>Transaction ID<br><span style="font-family: 'Plus Jakarta Sans', Arial;">معرف المعاملة</span></th>
-            </tr>
-            <tr>
-                <td>{{ transaction.created_at }}</td>
-                <td>{{ transaction.medium }}</td>
-                <td>{{ transaction.payable_amount }}</td>
-                <td>{{ transaction.transaction_id }}</td>
-            </tr>
-        </table>
+<table class="payment-table" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+      Payment Date<br>
+      <span style="font-family: 'Plus Jakarta Sans', Arial;">تاريخ الدفع</span>
+    </th>
+    <th>
+      Mode of Payment<br>
+      <span style="font-family: 'Plus Jakarta Sans', Arial;">طريقة الدفع</span>
+    </th>
+    <th>
+      Amount<br>
+      <span style="font-family: 'Plus Jakarta Sans', Arial;">المبلغ</span>
+    </th>
+    <th>
+      Transaction ID<br>
+      <span style="font-family: 'Plus Jakarta Sans', Arial;">معرّف المعاملة</span>
+    </th>
+  </tr>
 
-        <!-- Company Details -->
-        <table class="company-details" cellpadding="0" cellspacing="0">
-            <tr>
-                <td style="width: 200px; padding: 8px; vertical-align: top;">VAT Registration No</td>
-                <td style="padding: 8px;">: {{ branch.vat_number }}</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px;">Company Registration No</td>
-                <td style="padding: 8px;">: {{ branch.company_registration_number }}</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px;">Company Address</td>
-                <td style="padding: 8px;">: {{ branch.company_address }}</td>
-            </tr>
-        </table>
+  <tr>
+    <td>{{ transaction.created_at }}</td>
+    <td>{{ transaction.medium }}</td>
+    <td>{{ transaction.total_payable }}</td>
+    <td>{{ transaction_id }}</td>
+  </tr>
+</table>
+
+<!-- Company Details (English + Arabic) -->
+<table class="company-details" cellpadding="0" cellspacing="0">
+
+  <tr>
+    <td class="company-label">VAT Registration No</td>
+    <td class="company-value"> {{ vat_number }}</td>
+    <td class="company-arabic">رقم ضريبة القيمة المضافة</td>
+  </tr>
+  <tr>
+    <td class="company-label">Company Registration No</td>
+    <td class="company-value"> {{ company_registration_number }}</td>
+    <td class="company-arabic">رقم تسجيل الشركة</td>
+  </tr>
+  <tr>
+    <td class="company-label">Company Address</td>
+    <td class="company-value"> {{ company_address }}</td>
+    <td class="company-arabic">عنوان الشركة</td>
+  </tr>
+</table>
 
         <!-- Terms & Conditions -->
         <table class="terms-table" cellpadding="0" cellspacing="0">
